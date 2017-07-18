@@ -1,0 +1,42 @@
+swagger: '2.0'
+paths:
+  /pokemon:
+    get:
+      responses:
+        '200':
+          description: ''
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
+      description: obten una lista de pokes
+    post:
+      responses:
+        '200':
+          description: ''
+      parameters:
+        - name: Payload
+          description: Parametros del pokemon
+          required: false
+          in: body
+          schema:
+            type: object
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
+      description: Agrega un nuevo pokemon
+  '/pokemon/{id}':
+    get:
+      responses:
+        '200':
+          description: ''
+      parameters:
+        - name: id
+          in: path
+          allowMultiple: false
+          required: true
+          type: string
+          description: id de 36 bytes del pokemon
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
+info:
+  title: pokes
+  version: 1.0.0
+  description: 'Atrapalos a todos :D'
